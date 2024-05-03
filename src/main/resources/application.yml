@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: multicaffeinecache
+
+cache-manager:
+  caffeine-caches:
+    - cache-names: [ cache-a, cache-b ]
+      spec: initialCapacity=10, maximumSize=100, expireAfterAccess=30s
+    - cache-names: [ cache-c, cache-d ]
+      spec: initialCapacity=20, maximumSize=200, expireAfterAccess=10s
