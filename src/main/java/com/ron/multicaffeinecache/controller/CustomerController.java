@@ -18,11 +18,7 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping("/{id}")
-//    @Cacheable(value = "cache-a", cacheManager = "myCacheManager")
     public Customer getCustomerName(@PathVariable @Valid @Min(1) int id) {
-//        return new Customer(id, String.format("name:%d",id));
         return customerService.getCustomerName(id);
-
     }
-
 }
