@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class CustomerService {
     @Cacheable(value = "cache-c", cacheManager = "myCacheManager")
     public Customer getCustomerName(@PathVariable @Valid @Min(1) int id) {
-        log.info("inside CustomerService::getCustomerName({})", id);
+        log.info("inside CustomerService::getCustomerName({})", id);  // this won't be printed when cache is used
         return new Customer(id, String.format("name:%d",id));
     }
 }
